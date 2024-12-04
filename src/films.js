@@ -17,12 +17,9 @@ function getMoviesFromDirector(array, director) {
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {
   let moviesFromDirector = array.filter((movie) => movie.director === director);
-  console.log("EXERCICE 3 ->", moviesFromDirector);
 
   let sumaNotas = moviesFromDirector.reduce((acumulador, movie) => acumulador + movie.score, 0);
-  console.log("EXERCICE 3 ->", sumaNotas);
 
-  
   let result = sumaNotas / moviesFromDirector.length;
 
   console.log("EXERCICE 3 ->", result);
@@ -33,11 +30,7 @@ function moviesAverageOfDirector(array, director) {
 function orderAlphabetically(array) {
   let titulos = array.map((movie) => movie.title);
 
-  console.log("EXERCICE 4 ->", titulos);
-
   // let titulosOrdenados = titulos.sort();
-
-  // console.log("EXERCICE 4 ->", titulosOrdenados);
 
 let titulosOrdenados = titulos.sort((a, b) => {
   // Ordenar correctamente por los números al principio de las cadenas
@@ -50,17 +43,30 @@ let titulosOrdenados = titulos.sort((a, b) => {
   } else {
     return a.localeCompare(b); // Orden alfabético como fallback
   }
-});  console.log("EXERCICE 4 ->", titulosOrdenados);
+  }); 
 
   if (titulosOrdenados.length > 20) {
-    return titulosOrdenados.slice(0, 20);
+    titulosOrdenados = titulosOrdenados.slice(0, 20);
   }
+
+  console.log("EXERCICE 4 ->", titulosOrdenados);
 
   return titulosOrdenados;
 }
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {
+function orderByYear(array) {
+  let ordenAny = array.slice().sort((a, b) => a.year - b.year);
+
+  ordenFinal = ordenAny.sort((a, b) => {
+    if (a.year === b.year) {
+      return a.title.localeCompare(b.title);
+    }
+  });
+
+  console.log("EXERCICE 5 ->", ordenFinal);
+
+  return ordenFinal;
 
 }
 
