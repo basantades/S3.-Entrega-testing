@@ -433,4 +433,51 @@ describe('Function "bestFilmOfYear"', () => {
     ]);
   });
 
+  // test propio para mostrar empate
+  it('should return the best film of a year with draw, searching in an array', () => {
+    const testArr = [
+      {
+        title: 'Film1',
+        year: 1957,
+        director: 'Stanley Kubrick',
+        duration: '1h 28min',
+        genre: ['Drama', 'War'],
+        score: 6
+      },
+      {
+        title: 'Film2',
+        year: 1957,
+        director: 'Stanley Kubrick',
+        duration: '1h 28min',
+        genre: ['Drama', 'War'],
+        score: 8.4
+      },
+      {
+        title: 'Film3',
+        year: 1957,
+        director: 'Stanley Kubrick',
+        duration: '1h 28min',
+        genre: ['Drama', 'War'],
+        score: 8.4
+      },
+    ];
+    expect(bestFilmOfYear(testArr, 1957)).toEqual([
+      {
+        title: 'Film2',
+        year: 1957,
+        director: 'Stanley Kubrick',
+        duration: '1h 28min',
+        genre: ['Drama', 'War'],
+        score: 8.4
+      },
+      {
+        title: 'Film3',
+        year: 1957,
+        director: 'Stanley Kubrick',
+        duration: '1h 28min',
+        genre: ['Drama', 'War'],
+        score: 8.4
+      }
+    ]);
+  });
 });
