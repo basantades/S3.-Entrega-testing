@@ -2,7 +2,7 @@
 function getAllDirectors(array) {
   let result = array.map((movie) => movie.director);
 
-  console.log("EXERCICE 1 ->", result);
+  // console.log("EXERCICE 1 ->", result);
   return result;
 }
 
@@ -10,7 +10,6 @@ function getAllDirectors(array) {
 function getMoviesFromDirector(array, director) {
   let result = array.filter((movie) => movie.director === director);
 
-  console.log("EXERCICE 2 ->", result);
   return result;
 }
 
@@ -23,8 +22,6 @@ function moviesAverageOfDirector(array, director) {
   let result = sumaNotas / moviesFromDirector.length;
   result = parseFloat(result.toFixed(2));
 
-
-  console.log("EXERCICE 3 ->", result);
   return result;
 }
 
@@ -51,8 +48,6 @@ let titulosOrdenados = titulos.sort((a, b) => {
     titulosOrdenados = titulosOrdenados.slice(0, 20);
   }
 
-  console.log("EXERCICE 4 ->", titulosOrdenados);
-
   return titulosOrdenados;
 }
 
@@ -66,8 +61,6 @@ function orderByYear(array) {
     }
   });
 
-  console.log("EXERCICE 5 ->", ordenFinal);
-
   return ordenFinal;
 
 }
@@ -79,13 +72,27 @@ function moviesAverageByCategory(array, category) {
   let result = filtroCategory.reduce((acumulador, movie) => acumulador + movie.score, 0)/filtroCategory.length;
   result = parseFloat(result.toFixed(2));
 
-  console.log("EXERCICE 6 ->", result);
   return result;
 }
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
+function hoursToMinutes(array) {
 
+  let newArray = array.map(item => ({ ...item })); // Clonar el array
+
+  newArray.forEach((movie) => {
+    let duracion = movie.duration;
+    let horas = duracion.match(/(\d+)h/);
+    (horas === null) ? horas = 0 : horas = parseInt(horas[1]); // si el .match funciona saca un array del cual nos interesa el valor en index 1, si no encuentra sale null y le ponemos 0
+    let min = duracion.match(/(\d+)min/);
+    (min === null) ? min = 0 : min = parseInt(min[1]);
+    duracion = horas * 60 + min;
+
+    movie.duration = duracion;
+
+  });
+
+  return newArray;
 }
 
 // Exercise 8: Get the best film of a year
