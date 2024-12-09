@@ -1,86 +1,51 @@
-# Sprint 3 IT Academy | Video management tool
 
-## Introduction
+# S3. Entrega Testing
 
-A company in the audiovisual sector has asked us for a web application that will allow their employees to quickly find movies from a large database they have, since the process is currently done manually..
+## 📄 Descripción
 
-You will be in charge of setting up the core of the application: all the logic of filtering and sorting of movies. You have 2 weeks to finish, which is how long this sprint lasts.
+Este repositorio contiene un conjunto de funciones dentro de **src/films.js** desarrolladas en **JavaScript** que pasan tests de validación utilizando **Jest**. El objetivo es garantizar la calidad del código mediante pruebas automatizadas que validan su correcto funcionamiento.
 
-<br>
+## ✨ Características
 
-## Requirements
+- **Funciones validadas**: Las funciones implementadas están diseñadas para resolver problemas específicos y cumplen con los criterios definidos en los tests.
+- **Pruebas Automatizadas**: Se utiliza Jest para implementar y ejecutar tests.
 
+## 💻 Tecnologías Utilizadas
 
-1. Clone this repo
+- JavaScript
+- Jest
+
+## 📋 Requisitos
+
+- Node.js y npm instalados en tu sistema. Puedes descargarlos desde [nodejs.org](https://nodejs.org/).
+- Un navegador o editor de texto para visualizar o modificar el código, como Visual Studio Code.
+
+## 🛠️ Instalación
+
+**✔️ Paso 1:** Clona este repositorio:
 ```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3-movies
+git clone https://github.com/basantades/S3.-Entrega-testing.git
 ```
 
-2. Unlink your repo from the itacademy repository
+**✔️ Paso 2:** Ingresa al directorio del proyecto:
 ```bash
-$ git remote rm origin
+cd S3.-Entrega-testing
 ```
 
-3. Link your repo to the repository you have to create in your github account
+**✔️ Paso 3:** Instala las dependencias necesarias:
 ```bash
-$ git remote add origin <your repo name!>
+npm install
 ```
 
-<br>
+## ▶️ Ejecución
 
-## Submission
-
-1. Upon completion, run the following commands:
-
+Para correr los tests, utiliza el siguiente comando en tu terminal:
 ```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
+npm test
 ```
 
-2. Create Pull Request.
+Puedes abrir el archivo **index.html** dentro de la carpeta `src` para probar las funciones que se encuentran en **films.js**.
 
-3. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
+## 🤝 Contribuciones
 
-
-
-<br>
-
-## Introduction
-
-The statement of the exercise is available on the virtual campus.
-
-<br>
-
-## Tests!
-
-
-```shell
-$ npm install
-$ npm run test:watch
-```
-
-And last, open the generated `test-results.html` file with the "Live Server" VSCode extension to see test results.
-
-Apart from the statement, you will know exactly what you are asked to do by looking at the file `tests/films.spec.js`, all tests are already defined here!
-
-<br>
-
-## Instructions
-
-You have the following indications from the frontend responsible:
-
-- It is mandatory to implement all loops in ES6 (using map, reduce, filter and sort to manipulate arrays).
-
-- As at the moment we don't consume data from a server using an API, we will work with data from the src/data.js archive. For the moment we will implement the logic using
-an array of information about 250 movies.
-
-- The implementation is about processing this array of movies, to display it as requested in each exercise.
-
-- The logic to implement will be placed in the src/films.js file.
-
-- You don't need to show the result of each function on the screen. Your goal is to pass the tests.  More information on how to program oriented to pass tests at the end of the document.
-
-- Don't forget to include the capture of the test results in the virtual campus.
-
-
+Si deseas colaborar en este proyecto o informar sobre problemas, no dudes en crear un "issue" o enviar un "pull request".
