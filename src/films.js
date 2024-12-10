@@ -29,8 +29,6 @@ function moviesAverageOfDirector(array, director) {
 function orderAlphabetically(array) {
   let titulos = array.map((movie) => movie.title);
 
-  // let titulosOrdenados = titulos.sort();
-
 let titulosOrdenados = titulos.sort((a, b) => {
   // Ordenar correctamente por los números al principio de las cadenas
   const numA = parseInt(a.match(/^\d+/)); // Extrae el número al inicio de 'a'
@@ -100,9 +98,7 @@ function bestFilmOfYear(array, any) {
   let moviesYear = array.filter((movie) => movie.year === any);
   moviesYear = moviesYear.sort((a, b) => b.score - a.score);
 
-  // return moviesYear.slice(0, 1);
-
-  // mejora para comtemplar si hay empate en la mejor puntuacion (y añadido test propio para comprobarlo):
+  // mejora para ver si hay empate en la mejor puntuacion (y añadido test propio para comprobarlo):
   let bestScore = moviesYear[0].score;
   let bestMovieYear = moviesYear.filter((movie) => movie.score === bestScore);
   return bestMovieYear;
